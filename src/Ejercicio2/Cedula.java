@@ -12,6 +12,7 @@ public class Cedula extends JFrame {
     private JLabel lblTitulo;
     private JButton btnConfirmar;
     private JTextField txtCedula;
+    private JLabel lblExplicar;
 
     public Cedula() {
         setTitle("Validación de Cédula");
@@ -37,12 +38,16 @@ public class Cedula extends JFrame {
                 super.keyReleased(e);
                 if(txtCedula.getText().length() == 0){
                     txtCedula.setBackground(Color.red);
+                    lblExplicar.setText("No campo vacío");
                 }else if(txtCedula.getText().length() > 8){
                     txtCedula.setBackground(Color.yellow);
+                    lblExplicar.setText("La cédula no puede tener más de 8 dígitos");
                 }else if(validarCedula(txtCedula.getText())){
+                    lblExplicar.setText("Cédula válida");
                     txtCedula.setBackground(Color.green);
                 }else if(!validarCedula(txtCedula.getText())){
-                    txtCedula.setBackground(Color.red);
+                    lblExplicar.setText("Cédula inválida");
+                    txtCedula.setBackground(Color.orange);
                 }
                 else{
                     txtCedula.setBackground(Color.white);
