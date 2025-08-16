@@ -15,8 +15,7 @@ public class Cedula extends JFrame {
     private JLabel lblExplicar;
 
     public Cedula() {
-        setTitle("Validación de Cédula");
-
+        lblTitulo.getText();
         btnConfirmar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
